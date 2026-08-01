@@ -21,7 +21,7 @@ int make_fib(const int n, int fib[static 10])
     fib[i] = (fib[i - 1] + fib[i - 2]);
   }
   // returning size of fib array
-  return i - 1;
+  return i;
 }
 
 int main()
