@@ -1,0 +1,4 @@
+cmake_minimum_required(VERSION 3.25)
+
+project(exercise)
+add_subdirectory(gdb_basics)
