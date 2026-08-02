@@ -1,0 +1,20 @@
+{
+  "version": 4,
+  "configurePresets": [
+    {
+      "name": "host",
+      "displayName": "Host Preset",
+      "description": "Preset to builds examples for host architecture",
+      "binaryDir": "${sourceDir}/build"
+    },
+    {
+      "name": "spike",
+      "displayName": "Spike Preset",
+      "description": "Preset to builds examples to run on Spike",
+      "binaryDir": "${sourceDir}/spike.build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "TC-riscv.cmake"
+      }
+    }
+  ]
+}
