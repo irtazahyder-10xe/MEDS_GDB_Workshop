@@ -1,3 +1,4 @@
+// Credit: https://github.com/wwu-mentors
 #include <stdio.h>
 
 #include "bank.h"

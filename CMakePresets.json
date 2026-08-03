@@ -5,7 +5,10 @@
       "name": "host",
       "displayName": "Host Preset",
       "description": "Preset to builds examples for host architecture",
-      "binaryDir": "${sourceDir}/build"
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "SPIKE": "OFF"
+      }
     },
     {
       "name": "spike",
@@ -13,7 +16,8 @@
       "description": "Preset to builds examples to run on Spike",
       "binaryDir": "${sourceDir}/spike.build",
       "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "TC-riscv.cmake"
+        "CMAKE_TOOLCHAIN_FILE": "TC-riscv.cmake",
+        "SPIKE": "ON"
       }
     }
   ]
