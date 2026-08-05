@@ -11,12 +11,18 @@ The 1 day workshop will be covering the GDB in depth as well as giving brief int
 2. CMake v4 or above
 3. GDB 12.0 or above
 4. Valgrind
-5. RISCV GNU Toolchain
+5. RISCV GNU Toolchain (Review Slides for Spike Prerequisites)
 6. Spike
 7. Download the following manuals
     - GDB
     - Valgrind
     - GCC
+
+**NOTE: Please add the following to the .bashrc as well to allow CMake to generate riscv elfs**
+``` bash
+export RISCV=”<path_to_riscv_gnu_toolchain_folder>”
+export PATH=”$RISCV:$PATH”
+```
 
 ### Setting up Spike with GDB
 ``` bash
