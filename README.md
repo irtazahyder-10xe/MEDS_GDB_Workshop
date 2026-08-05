@@ -5,10 +5,6 @@ Repository for the GDB workshop for UET MEDS Lab.
 The 1 day workshop will be covering the GDB in depth as well as giving brief introduction to Valgrind, ASAN and UBSAN. The aim of the workshop is to get students familarized with these tools, provide a digestible overview of some useful features of these tools, and show them their appriopriate usage with interactive demos.
 
 **NOTE: All the demo programs are in C.**
-## TODO:
-1. Add references from GDB manual
-2. Make slides
-4. Convert all the examples in C
 
 ## Prerequistes
 1. Linux or WSL environment
