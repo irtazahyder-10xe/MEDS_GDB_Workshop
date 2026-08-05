@@ -19,7 +19,7 @@ fill_loop:
     mv   a0, s2            # a0 = n (argument for fib)
     jal  ra, fib            # call recursive fib(n), result in a0
 
-    sd   a0, 0(s0)          # store fib(i) into array
+    sw   a0, 0(s0)          # store fib(i) into array
     addi s0, s0, 4          # advance array pointer
 
     addi s2, s2, 1          # i++
@@ -35,9 +35,9 @@ j EXIT
 //  else: return fib(n-1) + fib(n-2)
 //------------------------------------
 fib:
-    addi sp, sp, -32        # allocate stack frame
-    sd   s3, 16(sp)         # save s3 (used to hold fib(n-1))
-    sd   a0, 8(sp)          # save n (argument) for later use
+    addi sp, sp, -16        # allocate stack frame
+    sw   s3, 8(sp)         # save s3 (used to hold fib(n-1))
+    sw   a0, 4(sp)          # save n (argument) for later use
 
     li   t0, 2
     blt  a0, t0, fib_base    # if n < 2, base case
@@ -48,7 +48,7 @@ fib:
     mv   s3, a0                # s3 = fib(n-1)
 
     # recursive case: fib(n-2)
-    ld   a0, 8(sp)             # restore original n
+    lw   a0, 4(sp)             # restore original n
     addi a0, a0, -2            # a0 = n - 2
     jal  ra, fib                 # a0 = fib(n-2)
 
@@ -56,11 +56,11 @@ fib:
     j    fib_return
 
 fib_base:
-    ld   a0, 8(sp)             # a0 = n (base case: fib(n) = n)
+    lw   a0, 4(sp)             # a0 = n (base case: fib(n) = n)
 
 fib_return:
-    ld   s3, 16(sp)            # restore s3
-    addi sp, sp, 32            # deallocate stack frame
+    lw   s3, 8(sp)            # restore s3
+    addi sp, sp, 16            # deallocate stack frame
     ret
 EXIT:
 RVTEST_CODE_END
