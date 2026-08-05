@@ -24,10 +24,12 @@ git clone git://git.code.sf.net/p/openocd/code openocd
 git checkout v0.12.0
 git merge 400cf2        # Contains fixes to some gnu issues
 ./bootstrap
-./configure --enable-remote-bitbang
+./configure --enable-remote-bitbang --disable-werror
 make -j $(nproc)
 make install
 ```
+
+Review [OpenOCD repo](https://github.com/openocd-org/openocd#building-openocd) to view dependencies.
 
 ## Sections
 1. Debugging
@@ -89,11 +91,20 @@ make install
         - GDB on coredumps
     - Reverse Debugging
     - gdb attach -p <process_pid>
-        - Generating coredump using GDB
-8. Grand Task
+8. Static Analyzers
+    - GCC UBSCAN
+    - GCC ASAN
+9. Grand Task
 
-## Credits
-https://github.com/zaldawid/magic_powers_at_your_fingertips
+## Acknowledgement
+|                             |  Links                                                      |
+|-----------------------------| ------------------------------------------------------------|
+| GDB task inspiration        | https://github.com/zaldawid/magic_powers_at_your_fingertips |
+| Setting up OpenOCD          | https://zhuanlan.zhihu.com/p/41517198                       |
+| Grand task inspiration      | https://github.com/davidbelliott/gdb-examples               |
+| RISCV Task headers          | https://github.com/riscv/riscv-test-env/tree/master         |
+| Valgrind examples:          | https://github.com/wwu-mentors/Valgrind-Workshop            |
+| Valgrind grand assessment:  | https://github.com/sampurdue/valgrind-examples              |
 
 ## License
 This software is licensed under [CC Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
