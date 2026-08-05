@@ -49,8 +49,6 @@ int main()
   do {
     printf("Enter length of fib: ");
     bytes = scanf("%d", &n);
-    if (bytes < 0)
-      break;
     printf("\nSum of Fibonnaci of length %d = %d\n", n, sum_fib(n));
   } while(n >= 0);
 
